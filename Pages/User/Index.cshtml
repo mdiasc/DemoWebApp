@@ -1,0 +1,37 @@
+﻿@page
+@model DemoWebApp.Pages.User.IndexModel
+@{
+}
+<a href="/User/Create" class="btn btn-primary"> Create </a>
+<br />
+<table class="table table-hover">
+<thead>
+<tr>
+<td>ID</td>
+<td>First Name:</td>
+<td>Last Name:</td>
+<td>Editar</td>
+<td>Deletar</td>
+</tr>
+</thead>
+<tbody>
+        @{
+            foreach(var item in Model.listusers)
+            {
+<tr>
+<td>@item.Id</td>
+<td>@item.FirstName</td>
+<td>@item.LastName</td>
+<td>
+<a href="/User/Edit?id=@item.Id" class="btn btn-primary">Edit</a>
+</td>
+ 
+<td>
+<a href="/User/Delete?id=@item.Id" class="btn btn-danger">Delete</a>
+</td>
+</tr>
+            }
+        }
+</tbody>
+
+
